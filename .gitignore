@@ -1,0 +1,9 @@
+*.suo
+
+BaTTTlestar.Model/bin
+BaTTTlestar.Model/obj
+BaTTTlestar.Model.Tests/bin
+BaTTTlestar.Model.Tests/obj
+BaTTTlestar.Shell.Console/bin
+BaTTTlestar.Shell.Console/obj
+
