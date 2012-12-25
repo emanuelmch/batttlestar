@@ -34,5 +34,17 @@ namespace BaTTTlestar.Model.Data
         {
             return this._board[x][y];
         }
+
+        public bool IsFilled()
+        {
+            for (int x = 0; x < X_SIZE; x++)
+                for (int y = 0; y < Y_SIZE; y++)
+                {
+                    if (this._board[x][y] == 0)
+                        return false;
+                }
+
+            return true;
+        }
     }
 }

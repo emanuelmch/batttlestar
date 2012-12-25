@@ -50,6 +50,8 @@ namespace BaTTTlestar.Model
 
             if (Winner != null)
                 this.GameState = Data.GameState.WINNER;
+            else if (Board.IsFilled())
+                this.GameState = Data.GameState.DRAW;
 
             _player1Turn = !_player1Turn;
         }

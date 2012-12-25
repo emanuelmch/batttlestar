@@ -4,6 +4,6 @@ namespace BaTTTlestar.Model.Data
 {
     public enum GameState
     {
-        ONGOING, WINNER
+        ONGOING, DRAW, WINNER
     }
 }
