@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaTTTlestar.Shell.Console",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaTTTlestar.Model", "BaTTTlestar.Model\BaTTTlestar.Model.csproj", "{F780824C-787D-4980-A486-3BAE42A0EBED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaTTTlestar.Model.Tests", "BaTTTlestar.Model.Tests\BaTTTlestar.Model.Tests.csproj", "{7C30D86A-4CCD-4AC9-A3D6-34BC945D61AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaTTTlestar.Model.Tests", "BaTTTlestar.Model.Tests\BaTTTlestar.Model.Tests.csproj", "{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,10 @@ Global
 		{F780824C-787D-4980-A486-3BAE42A0EBED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F780824C-787D-4980-A486-3BAE42A0EBED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F780824C-787D-4980-A486-3BAE42A0EBED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C30D86A-4CCD-4AC9-A3D6-34BC945D61AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C30D86A-4CCD-4AC9-A3D6-34BC945D61AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C30D86A-4CCD-4AC9-A3D6-34BC945D61AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C30D86A-4CCD-4AC9-A3D6-34BC945D61AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
