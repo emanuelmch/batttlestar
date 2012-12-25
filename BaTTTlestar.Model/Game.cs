@@ -60,7 +60,80 @@ namespace BaTTTlestar.Model
         #region Private Methods
         private void FindWinner()
         {
-            // TODO
+            this.Winner = CheckRows() ?? CheckColumns() ?? CheckDiagonals();
+        }
+
+        private IPlayer CheckRows()
+        {
+            int winner = 0;
+            for (int i = 0; i < Board.Y_SIZE; i++)
+            {
+                // TODO Create a method "GetRow" on Board
+                int column0 = Board.GetMove(0, i);
+                int column1 = Board.GetMove(1, i);
+                int column2 = Board.GetMove(2, i);
+                if ((column0 != 0) && (column0 == column1) && (column1 == column2))
+                {
+                    winner = column0;
+                    break;
+                }
+            }
+
+            return ValueToPlayer(winner);
+        }
+
+        private IPlayer CheckColumns()
+        {
+            int winner = 0;
+            for (int i = 0; i < Board.X_SIZE; i++)
+            {
+                // TODO Create a method "GetColumn" on Board
+                int row0 = Board.GetMove(i, 0);
+                int row1 = Board.GetMove(i, 1);
+                int row2 = Board.GetMove(i, 2);
+                if ((row0 != 0) && (row0 == row1) && (row1 == row2))
+                {
+                    winner = row0;
+                    break;
+                }
+            }
+
+            return ValueToPlayer(winner);
+        }
+
+        private IPlayer CheckDiagonals()
+        {
+            // We can't have a diagonal without the middle
+            int d11 = Board.GetMove(1, 1);
+            if (d11 == 0)
+                return null;
+
+            int d00 = Board.GetMove(0, 0);
+            int d22 = Board.GetMove(2, 2);
+
+            if ((d00 == d11) && (d11 == d22))
+                return ValueToPlayer(d11);
+
+            int d20 = Board.GetMove(2, 0);
+            int d02 = Board.GetMove(0, 2);
+
+            if ((d20 == d11) && (d11 == d02))
+                return ValueToPlayer(d11);
+
+            return null;
+        }
+
+        private IPlayer ValueToPlayer(int value)
+        {
+            switch (value)
+            {
+                case 1:
+                    return Player1;
+                case 2:
+                    return Player2;
+                default:
+                    return null;
+            }
         }
         #endregion
     }
