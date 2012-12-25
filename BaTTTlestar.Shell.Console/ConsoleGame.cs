@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using BaTTTlestar.Model;
+using BaTTTlestar.Model.Data;
 
 namespace BaTTTlestar.Shell.Console
 {
@@ -19,8 +16,43 @@ namespace BaTTTlestar.Shell.Console
 
         public void Run()
         {
-            System.Console.WriteLine("BaTTTlestar by Bill");
-            System.Console.ReadKey();
+            drawBoard();
+
+            do
+            {
+                System.Console.ReadKey();
+
+                _game.Move();
+                drawBoard();
+            } while (!_game.IsOver());
+
+            if (_game.GameState == GameState.DRAW)
+            {
+                System.Console.WriteLine("Aaaaand we have a draw!");
+            }
+            else
+            {
+                IPlayer winner = _game.Winner;
+                System.Console.WriteLine("The winner is " + winner.Name);
+            }
+
+            System.Console.ReadLine();
+        }
+
+        public void drawBoard()
+        {
+            Board board = _game.Board;
+            for (int y = 0; y < Board.Y_SIZE; y++)
+            {
+                for (int x = 0; x < Board.X_SIZE; x++)
+                {
+                    System.Console.Write(board.GetMove(x, y));
+                    if (x != (x - 1))
+                        System.Console.Write("|");
+                }
+                System.Console.WriteLine();
+            }
+            System.Console.WriteLine();
         }
     }
 }
