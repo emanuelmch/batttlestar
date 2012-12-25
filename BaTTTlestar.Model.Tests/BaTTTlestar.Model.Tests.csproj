@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>771e9dec-feaf-40be-a239-786cd38f89b3</ProjectGuid>
+    <ProjectGuid>{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BaTTTlestar.Model.Tests</RootNamespace>
@@ -50,8 +50,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="GameTests\Player1Wins_Diagonal.cs" />
+    <Compile Include="GameTests\Player2Wins_Column.cs" />
+    <Compile Include="GameTests\Player2Wins_Row.cs" />
+    <Compile Include="GameTests\Player1Wins_Column.cs" />
+    <Compile Include="GameTests\Player1Wins_Row.cs" />
+    <Compile Include="GameTests\Player2Wins_Diagonal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestUtils\TestGame.cs" />
+    <Compile Include="TestUtils\TestPlayer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaTTTlestar.Model\BaTTTlestar.Model.csproj">
+      <Project>{f780824c-787d-4980-a486-3bae42a0ebed}</Project>
+      <Name>BaTTTlestar.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
