@@ -6,6 +6,7 @@ namespace BaTTTlestar.Model.Players
     public class RandomPlayer : IPlayer
     {
         public string Name { get; set; }
+        public Board Board { get; set; }
 
         public RandomPlayer(string name)
         {

@@ -5,17 +5,10 @@ namespace BaTTTlestar.Model.Tests.TestUtils
 {
     public class TestPlayer : IPlayer
     {
-        public string Name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
+        public Board Board { get; set; }
 
-        public Move NextMove
-        {
-            get;
-            set;
-        }
+        public Move NextMove { get; set; }
 
         public TestPlayer(string name)
         {

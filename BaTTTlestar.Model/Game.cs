@@ -38,6 +38,8 @@ namespace BaTTTlestar.Model
         #region Public Methods
         public void Move()
         {
+            CurrentPlayer.Board = Board;
+
             Move move = null;
             do
             {
