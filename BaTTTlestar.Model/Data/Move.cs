@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaTTTlestar.Model
+namespace BaTTTlestar.Model.Data
 {
     public class Move
     {
@@ -12,7 +12,7 @@ namespace BaTTTlestar.Model
         public int Y { get; set; }
 
         public Move() { }
-        
+
         public Move(int x, int y)
         {
             this.X = x;
