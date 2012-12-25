@@ -1,5 +1,8 @@
 ﻿using System;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using BaTTTlestar.Model.Data;
 using BaTTTlestar.Model.Tests.TestUtils;
 
 namespace BaTTTlestar.Model.Tests.GameTests
@@ -14,21 +17,27 @@ namespace BaTTTlestar.Model.Tests.GameTests
             TestGame game = new TestGame();
 
             game.TestMove(2, 2);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(0, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(1, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(0, 1);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(1, 1);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(0, 2);
+            Assert.AreEqual(GameState.WINNER, game.GameState);
             Assert.AreEqual(game.Player2, game.Winner);
         }
 
@@ -38,21 +47,27 @@ namespace BaTTTlestar.Model.Tests.GameTests
             TestGame game = new TestGame();
 
             game.TestMove(0, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(1, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(2, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(1, 1);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(2, 1);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(1, 2);
+            Assert.AreEqual(GameState.WINNER, game.GameState);
             Assert.AreEqual(game.Player2, game.Winner);
         }
 
@@ -62,21 +77,27 @@ namespace BaTTTlestar.Model.Tests.GameTests
             TestGame game = new TestGame();
 
             game.TestMove(0, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(2, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(1, 0);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(2, 1);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(1, 1);
+            Assert.AreEqual(GameState.ONGOING, game.GameState);
             Assert.IsNull(game.Winner);
 
             game.TestMove(2, 2);
+            Assert.AreEqual(GameState.WINNER, game.GameState);
             Assert.AreEqual(game.Player2, game.Winner);
         }
 

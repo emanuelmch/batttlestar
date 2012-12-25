@@ -10,12 +10,14 @@ namespace BaTTTlestar.Model
         public IPlayer Player1 { get; set; }
         public IPlayer Player2 { get; set; }
         public IPlayer Winner { get; private set; }
+        public GameState GameState { get; private set; }
         #endregion
 
         #region Constructor
         public Game()
         {
             this.Board = new Board();
+            this.GameState = Data.GameState.ONGOING;
         }
         #endregion
 
@@ -45,12 +47,16 @@ namespace BaTTTlestar.Model
             this.Board.AddMove(move, _player1Turn ? 1 : 2);
 
             FindWinner();
+
+            if (Winner != null)
+                this.GameState = Data.GameState.WINNER;
+
             _player1Turn = !_player1Turn;
         }
 
         public bool IsOver()
         {
-            return Winner != null;
+            return this.GameState != Data.GameState.ONGOING;
         }
         #endregion
 
