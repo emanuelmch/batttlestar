@@ -18,5 +18,24 @@ namespace BaTTTlestar.Model.Data
             this.X = x;
             this.Y = y;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Move)
+            {
+                var other = (Move)obj;
+                if (other.X != this.X)
+                    return false;
+                return other.Y == this.Y;
+            }
+
+            return false;
+        }
+
+        public override string ToString()
+        {
+            return "(" + X + "," + Y + ")";
+        }
+
     }
 }
