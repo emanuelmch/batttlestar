@@ -7,6 +7,7 @@ namespace BaTTTlestar.Model
     {
         string Name { get; }
         Board Board { set; }
+        int Value { set; }
 
         Move Move();
     }

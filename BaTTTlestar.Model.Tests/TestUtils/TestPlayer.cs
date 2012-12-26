@@ -7,6 +7,7 @@ namespace BaTTTlestar.Model.Tests.TestUtils
     {
         public string Name { get; set; }
         public Board Board { get; set; }
+        public int Value { get; set; }
 
         public Move NextMove { get; set; }
 

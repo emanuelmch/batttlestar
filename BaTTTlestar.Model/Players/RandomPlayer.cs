@@ -7,6 +7,7 @@ namespace BaTTTlestar.Model.Players
     {
         public string Name { get; set; }
         public Board Board { get; set; }
+        public int Value { get; set; }
 
         public RandomPlayer(string name)
         {

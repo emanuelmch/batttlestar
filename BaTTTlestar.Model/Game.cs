@@ -39,6 +39,8 @@ namespace BaTTTlestar.Model
         public void Move()
         {
             CurrentPlayer.Board = Board;
+            Player1.Value = 1;
+            Player2.Value = 2;
 
             Move move = null;
             do
