@@ -45,6 +45,7 @@
     <Compile Include="IPlayer.cs" />
     <Compile Include="Data\Move.cs" />
     <Compile Include="Players\RandomPlayer.cs" />
+    <Compile Include="Players\SimplePlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

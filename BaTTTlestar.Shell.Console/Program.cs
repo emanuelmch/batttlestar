@@ -15,7 +15,7 @@ namespace BaTTTlestar.Shell.Console
         {
             Game game = new Game();
             game.Player1 = new RandomPlayer("Player 1");
-            game.Player2 = new RandomPlayer("Player 2");
+            game.Player2 = new SimplePlayer("Player 2");
 
             ConsoleGame shell = new ConsoleGame(game);
             shell.Run();
