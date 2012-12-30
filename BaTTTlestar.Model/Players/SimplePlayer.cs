@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 using BaTTTlestar.Model.Data;
 
 namespace BaTTTlestar.Model.Players
@@ -119,15 +121,20 @@ namespace BaTTTlestar.Model.Players
 
         private Move RandomMove()
         {
-            Random random = new Random();
-            while (true)
-            {
-                int x = random.Next(Board.X_SIZE);
-                int y = random.Next(Board.Y_SIZE);
-                var move = new Move(x, y);
-                if (Board.IsMoveValid(move))
-                    return move;
-            }
+            var possibleMoves = new List<Move>();
+
+            for (int x = 0; x < Board.X_SIZE; x++)
+                for (int y = 0; y < Board.Y_SIZE; y++)
+                {
+                    var move = new Move(x, y);
+                    if (Board.IsMoveValid(move))
+                        possibleMoves.Add(move);
+                }
+
+            var random = new Random();
+            var moveCount = possibleMoves.Count;
+
+            return possibleMoves[random.Next(moveCount)];
         }
     }
 }
