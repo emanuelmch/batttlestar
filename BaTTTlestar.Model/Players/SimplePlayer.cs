@@ -92,7 +92,7 @@ namespace BaTTTlestar.Model.Players
                 if (Board.GetMove(1, 1) == 0 && Board.GetMove(2, 0) == value)
                     return new Move(1, 1);
             }
-            else if (Board.GetMove(0, 2) == value)
+            else if (Board.GetMove(0, 2) == 0)
             {
                 if (Board.GetMove(1, 1) == value && Board.GetMove(2, 0) == value)
                     return new Move(0,2);
@@ -110,7 +110,7 @@ namespace BaTTTlestar.Model.Players
                 if (Board.GetMove(1, 1) == 0 && Board.GetMove(2, 2) == value)
                     return new Move(1, 1);
             }
-            else if (Board.GetMove(0, 0) == value)
+            else if (Board.GetMove(0, 0) == 0)
             {
                 if (Board.GetMove(1, 1) == value && Board.GetMove(2, 2) == value)
                     return new Move(0, 0);
