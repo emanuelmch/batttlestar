@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Threading;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using BaTTTlestar.Model.Data;
 using BaTTTlestar.Model.Players;
 
 namespace BaTTTlestar.Model.Tests.PlayerTests
 {
-    [TestClass]
+    [TestFixture]
     public class SimplePlayer_WinningMove_Column
     {
         private const int AMOUNT_OF_ASSERTIONS = 50;
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column0_Row0()
         {
             var board = new Board();
@@ -35,7 +35,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column0_Row1()
         {
             var board = new Board();
@@ -57,7 +57,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column0_Row2()
         {
             var board = new Board();
@@ -79,7 +79,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column1_Row0()
         {
             var board = new Board();
@@ -101,7 +101,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column1_Row1()
         {
             var board = new Board();
@@ -123,7 +123,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column1_Row2()
         {
             var board = new Board();
@@ -145,7 +145,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column2_Row0()
         {
             var board = new Board();
@@ -167,7 +167,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column2_Row1()
         {
             var board = new Board();
@@ -189,7 +189,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_Column2_Row2()
         {
             var board = new Board();

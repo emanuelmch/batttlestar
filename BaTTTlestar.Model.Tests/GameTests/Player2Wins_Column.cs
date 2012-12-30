@@ -1,17 +1,17 @@
 ﻿using System;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using BaTTTlestar.Model.Data;
 using BaTTTlestar.Model.Tests.TestUtils;
 
 namespace BaTTTlestar.Model.Tests.GameTests
 {
-    [TestClass]
+    [TestFixture]
     public class Player2Wins_Column
     {
 
-        [TestMethod]
+        [Test]
         public void Test_Player2Wins_Column0()
         {
             TestGame game = new TestGame();
@@ -41,7 +41,7 @@ namespace BaTTTlestar.Model.Tests.GameTests
             Assert.AreEqual(game.Player2, game.Winner);
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Player2Wins_Column1()
         {
             TestGame game = new TestGame();
@@ -71,7 +71,7 @@ namespace BaTTTlestar.Model.Tests.GameTests
             Assert.AreEqual(game.Player2, game.Winner);
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Player2Wins_Column2()
         {
             TestGame game = new TestGame();

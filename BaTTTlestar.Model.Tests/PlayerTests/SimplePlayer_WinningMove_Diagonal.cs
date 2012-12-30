@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Threading;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using BaTTTlestar.Model.Data;
 using BaTTTlestar.Model.Players;
 
 namespace BaTTTlestar.Model.Tests.PlayerTests
 {
-    [TestClass]
+    [TestFixture]
     public class SimplePlayer_WinningMove_Diagonal
     {
         private const int AMOUNT_OF_ASSERTIONS = 50;
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_DiagonalAsc_Row0()
         {
             var board = new Board();
@@ -35,7 +35,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_DiagonalAsc_Row1()
         {
             var board = new Board();
@@ -57,7 +57,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_DiagonalAsc_Row2()
         {
             var board = new Board();
@@ -79,7 +79,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_DiagonalDesc_Row0()
         {
             var board = new Board();
@@ -101,7 +101,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_DiagonalDesc_Row1()
         {
             var board = new Board();
@@ -123,7 +123,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void Test_SimplePlayer_DiagonalDesc_Row2()
         {
             var board = new Board();

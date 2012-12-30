@@ -1,17 +1,17 @@
 ﻿using System;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using BaTTTlestar.Model.Data;
 using BaTTTlestar.Model.Tests.TestUtils;
 
 namespace BaTTTlestar.Model.Tests.GameTests
 {
-    [TestClass]
+    [TestFixture]
     public class Draw 
     {
 
-        [TestMethod]
+        [Test]
         public void Test_Draw()
         {
             TestGame game = new TestGame();
