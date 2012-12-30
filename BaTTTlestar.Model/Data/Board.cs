@@ -27,6 +27,8 @@ namespace BaTTTlestar.Model.Data
 
         public void AddMove(Move move, int player)
         {
+            if (this._board[move.X][move.Y] != 0)
+                throw new InvalidOperationException("Position [" + move.X + "," + move.Y + "] is already used: " + this._board[move.X][move.Y]);
             this._board[move.X][move.Y] = player;
         }
 
