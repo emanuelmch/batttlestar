@@ -9,7 +9,7 @@ using BaTTTlestar.Model.Players;
 namespace BaTTTlestar.Model.Tests.PlayerTests
 {
     [TestFixture]
-    public class SimplePlayer_WinningMove_Row
+    public class SimplePlayer_FinishingMove_Row
     {
         private const int AMOUNT_OF_ASSERTIONS = 50;
 
