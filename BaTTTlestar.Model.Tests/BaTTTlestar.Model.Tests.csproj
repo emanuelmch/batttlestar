@@ -57,6 +57,9 @@
     <Compile Include="GameTests\Player1Wins_Column.cs" />
     <Compile Include="GameTests\Player1Wins_Row.cs" />
     <Compile Include="GameTests\Player2Wins_Diagonal.cs" />
+    <Compile Include="PlayerTests\SimplePlayer_WinningMove_Column.cs" />
+    <Compile Include="PlayerTests\SimplePlayer_WinningMove_Diagonal.cs" />
+    <Compile Include="PlayerTests\SimplePlayer_WinningMove_Row.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestUtils\TestGame.cs" />
     <Compile Include="TestUtils\TestPlayer.cs" />
