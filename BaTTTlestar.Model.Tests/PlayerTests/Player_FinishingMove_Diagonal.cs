@@ -9,7 +9,7 @@ using BaTTTlestar.Model.Players;
 namespace BaTTTlestar.Model.Tests.PlayerTests
 {
     [TestFixture]
-    public class SimplePlayer_FinishingMove_Diagonal
+    public class Player_FinishingMove_Diagonal
     {
         private const int AMOUNT_OF_ASSERTIONS = 50;
 
@@ -20,7 +20,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         };
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_SimplePlayer_DiagonalAsc_Row0(int value)
+        public void Test_Player_DiagonalAsc_Row0(int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 2), 1);
@@ -42,7 +42,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_SimplePlayer_DiagonalAsc_Row1(int value)
+        public void Test_Player_DiagonalAsc_Row1(int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 2), 1);
@@ -64,7 +64,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_SimplePlayer_DiagonalAsc_Row2(int value)
+        public void Test_Player_DiagonalAsc_Row2(int value)
         {
             var board = new Board();
             board.AddMove(new Move(1, 1), 1);
@@ -86,7 +86,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_SimplePlayer_DiagonalDesc_Row0(int value)
+        public void Test_Player_DiagonalDesc_Row0(int value)
         {
             var board = new Board();
             board.AddMove(new Move(1, 1), 1);
@@ -108,7 +108,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_SimplePlayer_DiagonalDesc_Row1(int value)
+        public void Test_Player_DiagonalDesc_Row1(int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -130,7 +130,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_SimplePlayer_DiagonalDesc_Row2(int value)
+        public void Test_Player_DiagonalDesc_Row2(int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
