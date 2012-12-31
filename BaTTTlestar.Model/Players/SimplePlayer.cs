@@ -136,5 +136,6 @@ namespace BaTTTlestar.Model.Players
 
             return possibleMoves[random.Next(moveCount)];
         }
+
     }
 }
