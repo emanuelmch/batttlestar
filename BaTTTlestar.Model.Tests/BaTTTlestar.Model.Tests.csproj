@@ -54,9 +54,11 @@
     <Compile Include="GameTests\Player1Wins_Column.cs" />
     <Compile Include="GameTests\Player1Wins_Row.cs" />
     <Compile Include="GameTests\Player2Wins_Diagonal.cs" />
-    <Compile Include="PlayerTests\SimplePlayer_FinishingMove_Column.cs" />
-    <Compile Include="PlayerTests\SimplePlayer_FinishingMove_Diagonal.cs" />
-    <Compile Include="PlayerTests\SimplePlayer_FinishingMove_Row.cs" />
+    <Compile Include="PlayerTests\Player_FinishingMove_Column.cs" />
+    <Compile Include="PlayerTests\Player_FinishingMove_Diagonal.cs" />
+    <Compile Include="PlayerTests\Player_FinishingMove_Row.cs" />
+    <Compile Include="PlayerTests\Player_SingleAvailableMove.cs" />
+    <Compile Include="PlayerTests\Player_TwoAvailableMoves.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestUtils\TestGame.cs" />
     <Compile Include="TestUtils\TestPlayer.cs" />
