@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BaTTTlestar.Model.Data
 {
@@ -62,6 +59,20 @@ namespace BaTTTlestar.Model.Data
                 }
 
             return possibleMoves;
+        }
+
+
+        public Board Copy()
+        {
+            var copy = new Board();
+            
+            for (int x = 0; x < X_SIZE; x++)
+                for (int y = 0; y < Y_SIZE; y++)
+                {
+                    copy._board[x][y] = this._board[x][y];
+                }
+
+            return copy;
         }
 
     }
