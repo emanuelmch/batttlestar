@@ -44,6 +44,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Data\Move.cs" />
+    <Compile Include="Players\MiniMaxPlayer.cs" />
     <Compile Include="Players\RandomPlayer.cs" />
     <Compile Include="Players\SimplePlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
