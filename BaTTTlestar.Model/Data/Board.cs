@@ -48,5 +48,21 @@ namespace BaTTTlestar.Model.Data
 
             return true;
         }
+
+        public List<Move> GetPossibleMoves()
+        {
+            var possibleMoves = new List<Move>();
+
+            for (int x = 0; x < Board.X_SIZE; x++)
+                for (int y = 0; y < Board.Y_SIZE; y++)
+                {
+                    var move = new Move(x, y);
+                    if (IsMoveValid(move))
+                        possibleMoves.Add(move);
+                }
+
+            return possibleMoves;
+        }
+
     }
 }

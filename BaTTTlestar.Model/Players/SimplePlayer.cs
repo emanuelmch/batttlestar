@@ -121,15 +121,7 @@ namespace BaTTTlestar.Model.Players
 
         private Move RandomMove()
         {
-            var possibleMoves = new List<Move>();
-
-            for (int x = 0; x < Board.X_SIZE; x++)
-                for (int y = 0; y < Board.Y_SIZE; y++)
-                {
-                    var move = new Move(x, y);
-                    if (Board.IsMoveValid(move))
-                        possibleMoves.Add(move);
-                }
+            var possibleMoves = Board.GetPossibleMoves();
 
             var random = new Random();
             var moveCount = possibleMoves.Count;
