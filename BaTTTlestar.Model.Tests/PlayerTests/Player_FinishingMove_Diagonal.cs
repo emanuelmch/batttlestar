@@ -15,12 +15,14 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
 
         private static object[] TestValues =
         {
-            new object[] {1},
-            new object[] {2}
+            new object[] {new SimplePlayer(""), 1},
+            new object[] {new SimplePlayer(""), 2},
+            new object[] {new MiniMaxPlayer(""), 1},
+            new object[] {new MiniMaxPlayer(""), 2}
         };
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_DiagonalAsc_Row0(int value)
+        public void Test_Player_DiagonalAsc_Row0(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 2), 1);
@@ -28,7 +30,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(0, 1), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -42,7 +43,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_DiagonalAsc_Row1(int value)
+        public void Test_Player_DiagonalAsc_Row1(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 2), 1);
@@ -50,7 +51,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(0, 1), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -64,7 +64,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_DiagonalAsc_Row2(int value)
+        public void Test_Player_DiagonalAsc_Row2(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(1, 1), 1);
@@ -72,7 +72,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(0, 1), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -86,7 +85,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_DiagonalDesc_Row0(int value)
+        public void Test_Player_DiagonalDesc_Row0(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(1, 1), 1);
@@ -94,7 +93,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(0, 1), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -108,7 +106,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_DiagonalDesc_Row1(int value)
+        public void Test_Player_DiagonalDesc_Row1(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -116,7 +114,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(0, 1), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -130,7 +127,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_DiagonalDesc_Row2(int value)
+        public void Test_Player_DiagonalDesc_Row2(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -138,7 +135,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(0, 1), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 

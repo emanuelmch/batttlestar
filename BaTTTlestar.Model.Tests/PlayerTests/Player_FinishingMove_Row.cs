@@ -15,12 +15,14 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
 
         private static object[] TestValues =
         {
-            new object[] {1},
-            new object[] {2}
+            new object[] {new SimplePlayer(""), 1},
+            new object[] {new SimplePlayer(""), 2},
+            new object[] {new MiniMaxPlayer(""), 1},
+            new object[] {new MiniMaxPlayer(""), 2}
         };
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row0_Column0(int value)
+        public void Test_Player_Row0_Column0(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(1, 0), 1);
@@ -28,7 +30,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 1), 2);
             board.AddMove(new Move(2, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -42,7 +43,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row0_Column1(int value)
+        public void Test_Player_Row0_Column1(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -50,7 +51,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 1), 2);
             board.AddMove(new Move(2, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -64,7 +64,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row0_Column2(int value)
+        public void Test_Player_Row0_Column2(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -72,7 +72,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(1, 1), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -86,7 +85,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row1_Column0(int value)
+        public void Test_Player_Row1_Column0(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(1, 1), 1);
@@ -94,7 +93,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 0), 2);
             board.AddMove(new Move(2, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -108,7 +106,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row1_Column1(int value)
+        public void Test_Player_Row1_Column1(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 1), 1);
@@ -116,7 +114,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 0), 2);
             board.AddMove(new Move(2, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -130,7 +127,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row1_Column2(int value)
+        public void Test_Player_Row1_Column2(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 1), 1);
@@ -138,7 +135,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(1, 0), 2);
             board.AddMove(new Move(1, 2), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -152,7 +148,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row2_Column0(int value)
+        public void Test_Player_Row2_Column0(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(1, 2), 1);
@@ -160,7 +156,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 0), 2);
             board.AddMove(new Move(2, 1), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -174,7 +169,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row2_Column1(int value)
+        public void Test_Player_Row2_Column1(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 2), 1);
@@ -182,7 +177,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 0), 2);
             board.AddMove(new Move(2, 1), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -196,7 +190,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_Row2_Column2(int value)
+        public void Test_Player_Row2_Column2(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 2), 1);
@@ -204,7 +198,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(1, 0), 2);
             board.AddMove(new Move(1, 1), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 

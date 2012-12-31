@@ -15,12 +15,14 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
 
         private static object[] TestValues =
         {
-            new object[] {1},
-            new object[] {2}
+            new object[] {new SimplePlayer(""), 1},
+            new object[] {new SimplePlayer(""), 2},
+            new object[] {new MiniMaxPlayer(""), 1},
+            new object[] {new MiniMaxPlayer(""), 2}
         };
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_SingleMove_Row(int value)
+        public void Test_Player_SingleMove_Row(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -32,7 +34,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 0), 1);
             board.AddMove(new Move(2, 1), 1);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -46,7 +47,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_SingleMove_Column(int value)
+        public void Test_Player_SingleMove_Column(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -58,7 +59,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 0), 2);
             board.AddMove(new Move(2, 1), 1);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
@@ -72,7 +72,7 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
         }
 
         [Test, TestCaseSource("TestValues")]
-        public void Test_Player_SingleMove_Diagonal(int value)
+        public void Test_Player_SingleMove_Diagonal(IPlayer player, int value)
         {
             var board = new Board();
             board.AddMove(new Move(0, 0), 1);
@@ -84,7 +84,6 @@ namespace BaTTTlestar.Model.Tests.PlayerTests
             board.AddMove(new Move(2, 0), 1);
             board.AddMove(new Move(2, 1), 2);
 
-            var player = new SimplePlayer("");
             player.Board = board;
             player.Value = value;
 
