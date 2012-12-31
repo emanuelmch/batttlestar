@@ -75,5 +75,74 @@ namespace BaTTTlestar.Model.Data
             return copy;
         }
 
+        public int GetWinner()
+        {
+            var winner = CheckRows();
+            winner = (winner != 0) ? winner : CheckColumns();
+            winner = (winner != 0) ? winner : CheckDiagonals();
+
+            return winner;
+        }
+
+        private int CheckRows()
+        {
+            int winner = 0;
+            for (int i = 0; i < Board.Y_SIZE; i++)
+            {
+                // TODO Create a method "GetRow" on Board
+                int column0 = GetMove(0, i);
+                int column1 = GetMove(1, i);
+                int column2 = GetMove(2, i);
+                if ((column0 != 0) && (column0 == column1) && (column1 == column2))
+                {
+                    winner = column0;
+                    break;
+                }
+            }
+
+            return winner;
+        }
+
+        private int CheckColumns()
+        {
+            int winner = 0;
+            for (int i = 0; i < Board.X_SIZE; i++)
+            {
+                // TODO Create a method "GetColumn" on Board
+                int row0 = GetMove(i, 0);
+                int row1 = GetMove(i, 1);
+                int row2 = GetMove(i, 2);
+                if ((row0 != 0) && (row0 == row1) && (row1 == row2))
+                {
+                    winner = row0;
+                    break;
+                }
+            }
+
+            return winner;
+        }
+
+        private int CheckDiagonals()
+        {
+            // We can't have a diagonal without the middle
+            int d11 = GetMove(1, 1);
+            if (d11 == 0)
+                return 0;
+
+            int d00 = GetMove(0, 0);
+            int d22 = GetMove(2, 2);
+
+            if ((d00 == d11) && (d11 == d22))
+                return d11;
+
+            int d20 = GetMove(2, 0);
+            int d02 = GetMove(0, 2);
+
+            if ((d20 == d11) && (d11 == d02))
+                return d11;
+
+            return 0;
+        }
+
     }
 }
