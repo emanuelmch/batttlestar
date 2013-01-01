@@ -7,6 +7,7 @@ namespace BaTTTlestar.Model.Data
     {
         public const int X_SIZE = 3;
         public const int Y_SIZE = 3;
+        public const int SIZE = X_SIZE * Y_SIZE;
 
         private int[][] _board;
 
