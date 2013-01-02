@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaTTTlestar.Model", "BaTTTl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaTTTlestar.Model.Tests", "BaTTTlestar.Model.Tests\BaTTTlestar.Model.Tests.csproj", "{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaTTTlestar.Shell.WPF", "BaTTTlestar.Shell.WPF\BaTTTlestar.Shell.WPF.csproj", "{0279CD5C-9230-46E7-ABDA-0AEA368DFDA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D27DF3E2-9F62-4A5D-8768-CB63977A6FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0279CD5C-9230-46E7-ABDA-0AEA368DFDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0279CD5C-9230-46E7-ABDA-0AEA368DFDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0279CD5C-9230-46E7-ABDA-0AEA368DFDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0279CD5C-9230-46E7-ABDA-0AEA368DFDA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

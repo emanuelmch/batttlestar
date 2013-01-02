@@ -6,4 +6,5 @@ BaTTTlestar.Model.Tests/bin
 BaTTTlestar.Model.Tests/obj
 BaTTTlestar.Shell.Console/bin
 BaTTTlestar.Shell.Console/obj
-
+BaTTTlestar.Shell.WPF/bin
+BaTTTlestar.Shell.WPF/obj
