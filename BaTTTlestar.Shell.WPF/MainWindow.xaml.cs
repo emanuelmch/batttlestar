@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 using BaTTTlestar.Model;
 using BaTTTlestar.Model.Data;
@@ -10,8 +11,9 @@ namespace BaTTTlestar.Shell.WPF
 {
     public partial class MainWindow : Window
     {
-        private const string PLAYER_1_VALUE = "X";
-        private const string PLAYER_2_VALUE = "O";
+        private const string EMPTY_URI = "pack://application:,,,/resources/empty.png";
+        private const string PLAYER_1_URI = "pack://application:,,,/resources/player1.png";
+        private const string PLAYER_2_URI = "pack://application:,,,/resources/player2.png";
 
         private bool gameOngoing = false;
         private Game game;
@@ -33,8 +35,8 @@ namespace BaTTTlestar.Shell.WPF
                 gameOngoing = true;
                 this.NextMoveButton.Content = "Next move";
                 this.game = new Game();
-                game.Player1 = new RandomPlayer(PLAYER_1_VALUE);
-                game.Player2 = new MiniMaxPlayer(PLAYER_2_VALUE);
+                game.Player1 = new RandomPlayer("O");
+                game.Player2 = new MiniMaxPlayer("X");
             }
 
             RedrawGame();
@@ -45,23 +47,23 @@ namespace BaTTTlestar.Shell.WPF
             for (int x = 0; x < Board.X_SIZE; x++)
                 for (int y = 0; y < Board.Y_SIZE; y++)
                 {
-                    var button = FindButton(x, y);
-                    RedrawButton(button, this.game.Board.GetMove(x, y));
+                    var image = FindImage(x, y);
+                    RedrawImage(image, this.game.Board.GetMove(x, y));
                 }
         }
 
-        private void RedrawButton(Button button, int value)
+        private void RedrawImage(Image image, int value)
         {
             switch (value)
             {
                 case 1:
-                    button.Content = PLAYER_1_VALUE;
+                    image.Source = new BitmapImage(new Uri(PLAYER_1_URI));
                     break;
                 case 2:
-                    button.Content = PLAYER_2_VALUE;
+                    image.Source = new BitmapImage(new Uri(PLAYER_2_URI));
                     break;
                 default:
-                    button.Content = "";
+                    image.Source = new BitmapImage(new Uri(EMPTY_URI));
                     break;
             }
 
@@ -76,7 +78,7 @@ namespace BaTTTlestar.Shell.WPF
                     PrepareForNewGame();
                     break;
                 case GameState.WINNER:
-                    text = "And the winner is " + game.Winner.Name;
+                    text = "And the " + game.Winner.Name + " won!";
                     PrepareForNewGame();
                     break;
             }
@@ -84,14 +86,14 @@ namespace BaTTTlestar.Shell.WPF
             this.StatusBlock.Text = text;
         }
 
-        private Button FindButton(int x, int y)
+        private Image FindImage(int x, int y)
         {
-            var buttons = ((this.Content as Grid).Children[0] as Grid).Children;
+            var images = ((this.Content as Grid).Children[0] as Grid).Children;
 
-            foreach (UIElement button in buttons)
+            foreach (UIElement image in images)
             {
-                if (Grid.GetColumn(button) == x && Grid.GetRow(button) == y)
-                    return (Button)button;
+                if (Grid.GetColumn(image) == x && Grid.GetRow(image) == y)
+                    return (Image)image;
             }
 
             return null;
@@ -102,5 +104,6 @@ namespace BaTTTlestar.Shell.WPF
             this.NextMoveButton.Content = "Start new game";
             this.gameOngoing = false;
         }
+
     }
 }
