@@ -21,7 +21,11 @@ namespace BaTTTlestar.Shell.WPF
         public MainWindow()
         {
             InitializeComponent();
-            NextMove(null, null);
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            NextMove(sender, e);
         }
 
         private void NextMove(object sender, RoutedEventArgs e)
@@ -88,7 +92,7 @@ namespace BaTTTlestar.Shell.WPF
 
         private Image FindImage(int x, int y)
         {
-            var images = ((this.Content as Grid).Children[0] as Grid).Children;
+            var images = ((this.Content as Grid).Children[1] as Grid).Children;
 
             foreach (UIElement image in images)
             {
