@@ -15,6 +15,12 @@ namespace BaTTTlestar.Shell.WPF
         private const string PLAYER_1_URI = "pack://application:,,,/resources/player1.png";
         private const string PLAYER_2_URI = "pack://application:,,,/resources/player2.png";
 
+        private const string PLAYER_1_NAME = "O";
+        private const string PLAYER_2_NAME = "X";
+
+        private IPlayer player1 = new RandomPlayer(PLAYER_1_NAME);
+        private IPlayer player2 = new MiniMaxPlayer(PLAYER_2_NAME);
+
         private bool gameOngoing = false;
         private Game game;
 
@@ -28,6 +34,44 @@ namespace BaTTTlestar.Shell.WPF
             NextMove(sender, e);
         }
 
+        private void ChangePlayer(object sender, RoutedEventArgs e)
+        {
+            var menuitem = sender as MenuItem;
+            var parent = menuitem.Parent as MenuItem;
+
+            // OK, this is ugly, but it's not like I'm caring much at this point...
+            foreach (var child in parent.Items)
+            {
+                var childItem = child as MenuItem;
+                childItem.IsChecked = childItem == menuitem;
+            }
+
+
+            bool isPlayer1 = parent.Header.Equals("Player 1");
+
+            IPlayer newplayer = createNewPlayer(menuitem.Header as string, isPlayer1 ? PLAYER_1_NAME : PLAYER_2_NAME);
+
+            if (isPlayer1)
+                this.player1 = newplayer;
+            else
+                this.player2 = newplayer;
+
+            RestartGame();
+            RedrawGame();
+        }
+
+        private IPlayer createNewPlayer(string text, string name)
+        {
+            if (text == "Easy")
+                return new RandomPlayer(name);
+            if (text == "Medium")
+                return new SimplePlayer(name);
+            if (text == "Hard")
+                return new MiniMaxPlayer(name);
+
+            return null;
+        }
+
         private void NextMove(object sender, RoutedEventArgs e)
         {
             if (gameOngoing)
@@ -36,11 +80,8 @@ namespace BaTTTlestar.Shell.WPF
             }
             else
             {
-                gameOngoing = true;
                 this.NextMoveButton.Content = "Next move";
-                this.game = new Game();
-                game.Player1 = new RandomPlayer("O");
-                game.Player2 = new MiniMaxPlayer("X");
+                RestartGame();
             }
 
             RedrawGame();
@@ -54,6 +95,14 @@ namespace BaTTTlestar.Shell.WPF
                     var image = FindImage(x, y);
                     RedrawImage(image, this.game.Board.GetMove(x, y));
                 }
+        }
+
+        private void RestartGame()
+        {
+            this.gameOngoing = true;
+            this.game = new Game();
+            this.game.Player1 = player1;
+            this.game.Player2 = player2;
         }
 
         private void RedrawImage(Image image, int value)
