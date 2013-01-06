@@ -69,7 +69,7 @@ namespace BaTTTlestar.Shell.WPF
             if (text == "Hard")
                 return new MiniMaxPlayer(name);
 
-            return null;
+            return new HumanPlayer(name);
         }
 
         private void NextMove(object sender, RoutedEventArgs e)
@@ -95,6 +95,9 @@ namespace BaTTTlestar.Shell.WPF
                     var image = FindImage(x, y);
                     RedrawImage(image, this.game.Board.GetMove(x, y));
                 }
+
+            var isNextPlayerHuman = game.CurrentPlayer is HumanPlayer;
+            this.NextMoveButton.IsEnabled = !isNextPlayerHuman;
         }
 
         private void RestartGame()
