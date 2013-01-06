@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 using BaTTTlestar.Model;
@@ -11,6 +12,8 @@ namespace BaTTTlestar.Shell.WPF
 {
     public partial class MainWindow : Window
     {
+        public static readonly RoutedUICommand imageClick = new RoutedUICommand();
+
         private const string EMPTY_URI = "pack://application:,,,/resources/empty.png";
         private const string PLAYER_1_URI = "pack://application:,,,/resources/player1.png";
         private const string PLAYER_2_URI = "pack://application:,,,/resources/player2.png";
@@ -85,6 +88,20 @@ namespace BaTTTlestar.Shell.WPF
             }
 
             RedrawGame();
+        }
+
+        private void HumanPlayer_Move(object sender, RoutedEventArgs e)
+        {
+            if (gameOngoing && game.CurrentPlayer is HumanPlayer)
+            {
+                var human = game.CurrentPlayer as HumanPlayer;
+
+                var row = Grid.GetRow(sender as UIElement);
+                var column = Grid.GetColumn(sender as UIElement);
+
+                human.NextMove = new Move(column, row);
+                NextMove(sender, e);
+            }
         }
 
         private void RedrawGame()

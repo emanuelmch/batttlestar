@@ -37,15 +37,15 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Image Grid.Row="0" Grid.Column="0" Stretch="Uniform" />
-            <Image Grid.Row="0" Grid.Column="1" Stretch="Uniform" />
-            <Image Grid.Row="0" Grid.Column="2" Stretch="Uniform" />
-            <Image Grid.Row="1" Grid.Column="0" Stretch="Uniform" />
-            <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" />
-            <Image Grid.Row="1" Grid.Column="2" Stretch="Uniform" />
-            <Image Grid.Row="2" Grid.Column="0" Stretch="Uniform" />
-            <Image Grid.Row="2" Grid.Column="1" Stretch="Uniform" />
-            <Image Grid.Row="2" Grid.Column="2" Stretch="Uniform" />
+            <Image Grid.Row="0" Grid.Column="0" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="0" Grid.Column="1" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="0" Grid.Column="2" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="1" Grid.Column="0" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="1" Grid.Column="2" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="2" Grid.Column="0" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="2" Grid.Column="1" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
+            <Image Grid.Row="2" Grid.Column="2" Stretch="Uniform" MouseLeftButtonUp="HumanPlayer_Move"/>
 
         </Grid>
 
