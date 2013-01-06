@@ -114,7 +114,7 @@ namespace BaTTTlestar.Shell.WPF
                 }
 
             var isNextPlayerHuman = game.CurrentPlayer is HumanPlayer;
-            this.NextMoveButton.IsEnabled = !isNextPlayerHuman;
+            this.NextMoveButton.IsEnabled = !isNextPlayerHuman || !gameOngoing;
         }
 
         private void RestartGame()
