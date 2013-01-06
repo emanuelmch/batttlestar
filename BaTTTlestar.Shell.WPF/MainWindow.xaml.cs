@@ -21,7 +21,7 @@ namespace BaTTTlestar.Shell.WPF
         private const string PLAYER_1_NAME = "O";
         private const string PLAYER_2_NAME = "X";
 
-        private IPlayer player1 = new RandomPlayer(PLAYER_1_NAME);
+        private IPlayer player1 = new HumanPlayer(PLAYER_1_NAME);
         private IPlayer player2 = new MiniMaxPlayer(PLAYER_2_NAME);
 
         private bool gameOngoing = false;

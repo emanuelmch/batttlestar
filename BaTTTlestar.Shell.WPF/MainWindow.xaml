@@ -12,8 +12,8 @@
 
         <Menu Grid.Row="0" IsMainMenu="True">
             <MenuItem Header="Player 1">
-                <MenuItem Header="Human" IsCheckable="True" Click="ChangePlayer" />
-                <MenuItem Header="Easy" IsCheckable="True" IsChecked="True" Click="ChangePlayer" />
+                <MenuItem Header="Human" IsCheckable="True" Click="ChangePlayer" IsChecked="True" />
+                <MenuItem Header="Easy" IsCheckable="True" Click="ChangePlayer" />
                 <MenuItem Header="Medium" IsCheckable="True" Click="ChangePlayer" />
                 <MenuItem Header="Hard" IsCheckable="True" Click="ChangePlayer" />
             </MenuItem>
